@@ -1,5 +1,14 @@
-server: 
-  port: 80 
-spring: 
-  profiles: 
+server:
+  port: 80
+spring:
+  profiles:
     active: local
+  rabbitmq:
+    host: 192.168.200.129
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+    
+# nginx代理的ip地址, 请求头信息:
+ip-header: X-Forwarded-For,Proxy-Client-IP,WL-Proxy-Client-IP,HTTP_X_FORWARDED_FOR,HTTP_X_FORWARDED,HTTP_X_CLUSTER_CLIENT_IP,HTTP_CLIENT_IP,HTTP_FORWARDED_FOR,HTTP_FORWARDED,HTTP_VIA,REMOTE_ADDR
